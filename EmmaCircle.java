@@ -3,7 +3,8 @@ public class EmmaCircle extends CircleKlasse {
 	private String name;
 	
 	public EmmaCircle(String n, int r, boolean b) {
-		super(r,b);		//statt super könnte man sich VORSTELLEN dass da Circle steht
+		//statt super könnte man sich VORSTELLEN dass da Circle steht
+		super(r,b);		
 		setName(n);
 	}
 	
@@ -31,8 +32,13 @@ public class EmmaCircle extends CircleKlasse {
 	public String getName() {
 		return name;
 	}
-	//wie methode mit name??
-	public void pruefenName() {
-		System.out.println("\n"+getName()+" hat folgende Maße : ");
-	}
+
+	public void ausgabe() {
+		System.out.println("Der Kreis mit dem Namen "+this.name+" hat die Werte:");
+		System.out.println("Radius : "+super.getRadius());
+		super.pruefen();
+//		System.out.println("Umfang : "+super.getCircumference());
+//		System.out.println("Flaeche : "+super.getArea());
+		this.getFilledS();
+	} 
 }

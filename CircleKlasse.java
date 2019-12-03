@@ -9,7 +9,6 @@ public class CircleKlasse {
 		// radius=1; auch gut aber man muss ja die konstruktoen verknüpfen
 		this(1, false);	//nennt man konstruktorverknüpfung
 		//oder so : this.radius=1; this.filled=false;
-		//oder so : setRadius(1);  setFilled(false);
 	}
 
 	public CircleKlasse(int r) {	
@@ -48,15 +47,32 @@ public class CircleKlasse {
 		return filled;
 	}
 
+	public boolean getFilledS() {
+		if (getFilled()) {
+			System.out.println("Der Kreis ist gefüllt!\n");
+			return true;
+		}
+		System.out.println("Der Kreis ist nicht gefüllt!\n");
+		return true;
+	}
 	public void setFilled(boolean filled) {
 		this.filled = filled;
 	}
 	public void pruefen() {
-		if (getFilled()==true) {
-			getArea();
-		} 
-		else {
-			getCircumference();
+		if (getFilled()) {
+			System.out.println("Flaeche: "+getArea());
+		}else {
+			System.out.println("Umfang: "+getCircumference());
 		}
+	}
+
+	public void ausgabe(String s) {
+		System.out.println("Der Kreis : ");
+		System.out.println("Radius : "+this.getRadius());
+		pruefen();
+//		de mach i wenn e einfach U und A ausgeben will
+//		System.out.println("Umfang : "+this.getCircumference());
+//		System.out.println("Flaeche : "+this.getArea());
+		this.getFilledS();
 	}
 }
